@@ -1,0 +1,502 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script type="text/javascript" src="zepto.min.js" > </script>
+<title>div</title>
+<script>
+var nivel=0,buenas=0,malas=0;
+var a=0,b=0,c=0,contt=0;
+var Echas=[true,true,true,true,true];
+
+</script>
+<style type="text/css">
+
+	 
+	 
+.muestra {
+    
+   height: 410px;
+   width: 65%;
+	
+	background:#000 url(img/fondo.jpg) fixed no-repeat;
+	float: center;
+	
+
+	
+
+}
+.AF
+{
+background-color: red;
+width: 25%;float: right;
+
+}
+.ayuda
+{
+width: 29%;
+position: absolute;
+	left: 48%;
+	top: 18%;
+
+}
+.pregunta
+{
+	width: 30%;
+	background-color: white;
+	background:url(fonfopr.png);
+	position: absolute;
+	left: 18%;
+	top: 1%;
+}
+.botones
+{position: absolute;
+height: 30%;
+width: 30%;
+float: left;
+}
+
+.RRespuestas
+{width: 30%;
+	
+	position: absolute;
+	left: 18%;
+	top: 20%;
+}
+
+.imagen
+{
+position: absolute;
+height: 30%;
+width: 30%;
+left: 18%;
+top: 30%;
+}
+</style>
+<script>
+
+//asignndo preguntas  y respuestas
+function p1()
+	{ nivel=1;
+	//var Preguntas=$("#PP");
+	// alert("lol");
+	 var Preguntas=$("#PP");
+     var r1=$("#R1");
+     var r2=$("#R2");
+     var r3=$("#R3");
+	 Preguntas.html("Pregunta");
+	 r1.html("R1-r1");
+	 r2.html("R1-r2");
+	 r3.html("R1-r3");
+	 //r1 buena
+	 a=1;
+	 
+	 //cl.html((+localStorage.c).toFixed(1));
+	}
+function p2()
+	{ nivel=2;
+	 var Preguntas=$("#PP");
+var r1=$("#R1");
+var r2=$("#R2");
+var r3=$("#R3");
+	// alert("lol");
+	 Preguntas.html("Pregunta2");
+	r1.html("R2-r1");
+	r2.html("R2-r2");
+	r3.html("R2-r3");
+	//r3 buena
+	c=1;
+	//cl.html((+localStorage.c).toFixed(1));
+	}
+function p3()
+	{ nivel=3;
+	//alert("lol");
+	var Preguntas=$("#PP");
+var r1=$("#R1");
+var r2=$("#R2");
+var r3=$("#R3");
+	Preguntas.html("Pregunta3");
+	r1.html("R3-r1");
+	r2.html("R3-r2");
+	r3.html("R3-r3");
+	 //cl.html((+localStorage.c).toFixed(1));
+	 //r3 buena
+	 c=1;
+	}
+function p4()
+	{ nivel=4;
+	//alert("lol");
+	var Preguntas=$("#PP");
+var r1=$("#R1");
+var r2=$("#R2");
+var r3=$("#R3");
+	 Preguntas.html("Pregunta4");
+	 r1.html("R4-r1");
+	 r2.html("R4-r2");
+	 r3.html("R4-r3");
+	 //r1 buena
+	 a=1;
+	 //cl.html((+localStorage.c).toFixed(1));
+	}
+function p5()
+	{ nivel=5;
+	//alert("lol");
+	var Preguntas=$("#PP");
+    var r1=$("#R1");
+    var r2=$("#R2");
+    var r3=$("#R3");
+	 Preguntas.html("Pregunta5");
+	 r1.html("R5-r1");
+	 r2.html("R5-r2");
+	 r3.html("R5-r3");
+	 //cl.html((+localStorage.c).toFixed(1));
+	 //r2 buena
+	 b=1;
+	}	
+	
+function Comprobando_R(lv,txt)
+{
+//comprobar
+//lv1-e0
+alert(txt+lv+Echas[0]);
+var acc=$("#ac");
+var Fll=$("#fll");
+if(txt==1 && lv==1 && Echas[0]==true)
+{  proceso(acc.html+fll.html);
+buenas+=1; var ac=$("#ac"); ac.html("Aciertos: "+buenas); levelechos(lv,1); proceso(buenas+malas);
+}
+if(txt!=1 && lv==1 && Echas[0]==true)
+ {
+malas+=1; var Fl=$("#fll"); Fl.html("Fallos: "+malas); levelechos(lv,2); proceso(buenas+malas);
+ }//finlv1-e0
+
+//lv2-e1
+if(txt==1 && lv==2 && Echas[1]==true)
+ {
+buenas+=1; var ac=$("#ac"); ac.html("Aciertos: "+buenas); levelechos(lv,1); proceso(buenas+malas);
+ }
+if(txt!=1 && lv==2 && Echas[1]==true)
+ {
+malas+=1; var Fl=$("#fll"); Fl.html("Fallos: "+malas); levelechos(lv,2); proceso(buenas+malas);
+ }//finlv2-e1
+ 
+ //lv3-e2
+if(txt==1 && lv==3 && Echas[2]==true)
+ {
+buenas+=1; var ac=$("#ac"); ac.html("Aciertos: "+buenas); levelechos(lv,1); proceso(buenas+malas);
+ }
+if(txt!=1 && lv==3 && Echas[2]==true)
+ {
+malas+=1; var Fl=$("#fll"); Fl.html("Fallos: "+malas); levelechos(lv,2); proceso(buenas+malas);
+ }//finlv3-e2
+
+ //lv4-e3
+if(txt==1 && lv==4 && Echas[3]==true)
+ {
+buenas+=1; var ac=$("#ac"); ac.html("Aciertos: "+buenas); levelechos(lv,1); proceso(buenas+malas);
+ }
+if(txt!=1 && lv==4 && Echas[3]==true)
+ {
+malas+=1; var Fl=$("#fll"); Fl.html("Fallos: "+malas); levelechos(lv,2); proceso(buenas+malas);
+ }//finlv4-e3
+
+ //lv5-e4
+if(txt==1 && lv==5 && Echas[4]==true)
+ {
+buenas+=1; var ac=$("#ac"); ac.html("Aciertos: "+buenas); levelechos(lv,1); proceso(buenas+malas);
+ }
+if(txt!=1 && lv==5 && Echas[4]==true)
+ {
+malas+=1; var Fl=$("#fll"); Fl.html("Fallos: "+malas); levelechos(lv,2); proceso(buenas+malas);
+ }//finlv5-e4
+
+//resetear
+a=0;
+b=0;
+c=0;
+fin();
+}	//fin comprobbar
+//levelechos
+function levelechos(lvv,txt)
+{
+alert("antes de entrar txt: "+txt+" lvv:"+lvv);
+
+if(lvv==1)
+{//aqui vendria el bolean pa ponerlo false i asi ya no tnega eecto
+
+if(txt==1 && Echas[0]==true){
+//asigna img de bueno/malo y cancela su uso  Y QUE SI ES BUENO PRODUCIR EL SONIDO D EBUENO JUNTO CON EL TEXTO EN EL DIV Q ESSSSSSSSSSSS__________________________________________
+var i1=document.getElementById('i1');
+var pp=$("#PP");
+alert('play');
+i1.src='Fallos.png'
+pp.html("Eres un fenomeno!<b>Continua asi!!!</b>");
+sonido(1);
+//falta el play
+//var s1=$("#sonido2");
+//s1.html("<audio autoplay><source src='grab_bien.wav'></audio>");
+Echas[0]=false;
+
+//fin pa ocmprobar si y termino
+//fin();
+}
+if(txt!=1 && Echas[0]==true){
+//asigna img de bueno/malo y cancela su uso
+var i1=document.getElementById('i1');
+i1.src='Fallos2.png'
+var pp=$("#PP");
+pp.html("Ohh que mal..!<b>la proxima acertaras!!!</b>");
+Echas[0]=false;
+sonido(2);
+}
+
+}
+
+
+if(lvv==2)
+{
+if(txt==1){
+//asigna img de bueno/malo y cancela su uso
+var i1=document.getElementById('i2');
+i1.src='Fallos.png'
+var pp=$("#PP");
+pp.html("Eres un fenomeno!<b>Continua asi!!!</b>");
+//falta el play
+Echas[1]=false;
+sonido(1);
+}
+if(txt!=1){
+//asigna img de bueno/malo y cancela su uso
+var i1=document.getElementById('i2');
+i1.src='Fallos2.png'
+var pp=$("#PP");
+pp.html("Ohh que mal..!<b>la proxima acertaras!!!</b>");
+//falta el play
+Echas[1]=false;
+sonido(2);
+}
+
+}
+
+if(lvv==3)
+{
+if(txt==1){
+//asigna img de bueno/malo y cancela su uso
+var i1=document.getElementById('i3');
+i3.src='Fallos.png'
+var pp=$("#PP");
+pp.html("Eres un fenomeno!<b>Continua asi!!!</b>");
+//falta el play
+Echas[2]=false;
+sonido(1);
+}
+if(txt!=1){
+//asigna img de bueno/malo y cancela su uso
+var i1=document.getElementById('i3');
+//
+i3.src='Fallos2.png'
+var pp=$("#PP");
+pp.html("Ohh que mal..!<b>la proxima acertaras!!!</b>");
+//falta el play
+Echas[2]=false;
+sonido(2);
+}
+
+}
+
+
+if(lvv==4)
+{
+
+if(txt==1){
+//asigna img de bueno/malo y cancela su uso
+var i4=document.getElementById('i4');
+i4.src='Fallos.png'
+var pp=$("#PP");
+pp.html("Eres un fenomeno!<b>Continua asi!!!</b>");
+//falta el play
+Echas[3]=false;
+sonido(1);
+}
+if(txt!=1){
+//asigna img de bueno/malo y cancela su uso
+var i4=document.getElementById('i4');
+i4.src='Fallos2.png'
+var pp=$("#PP");
+pp.html("Ohh que mal..!<b>la proxima acertaras!!!</b>");
+//falta el play
+Echas[3]=false;
+sonido(2);
+}
+
+}
+
+
+if(lvv==5)
+{
+
+if(txt==1){
+//asigna img de bueno/malo y cancela su uso
+var i5=document.getElementById('i5');
+i5.src='Fallos.png'
+var pp=$("#PP");
+pp.html("Eres un fenomeno!<b>Continua asi!!!</b>");
+//falta el play
+Echas[4]=false;
+sonido(1);
+}
+if(txt!=1){
+//asigna img de bueno/malo y cancela su uso
+var i1=document.getElementById('i5');
+i1.src='Fallos2.png'
+var pp=$("#PP");
+pp.html("Ohh que mal..!<b>la proxima acertaras!!!</b>");
+//falta el play
+Echas[4]=false;
+sonido(2);
+}
+
+}
+
+
+}//finlevelechos
+
+//fin
+function fin()
+{
+ if(Echas[0]==false && Echas[1]==false && Echas[2]==false && Echas[3]==false && Echas[4]==false)
+  {
+    var pp=$("#PP");
+	var ac=$("#ac");
+    var Fl=$("#fll");
+	var texto=(buenas>malas ? "Felicidades Superaste el Juego":"No superaste el juego");
+    pp.html(texto+"<br>"+ac.html()+" "+Fl.html()+"</b>");
+  
+     } 
+}
+
+//finfin
+
+ //setTimeout(redireccionar,10000);
+ //sonido
+ function sonido(BM)
+ {
+   var s1=$("#sonido2");
+   if (BM==1)
+   {
+   s1.html("<audio autoplay><source src='grab_bien.wav'></audio>");
+   }
+   else
+   {
+   s1.html("<audio autoplay><source src='grab_mal.wav'></audio>");
+   }
+//s1.html("<audio autoplay><source src='grab_bien.wav'></audio>");
+ }
+ //finsonido
+ 
+ //ayuda
+ function ayuda(num)
+ {//ahorita acela mostrando msj pero adlante diseña una imagen del que te ayuda dando el msj
+ 
+ 
+ 
+ if(num==1 && Echas[0]==true)
+ {
+  alert('Pista 1');
+ }
+ else if(num==2 && Echas[1]==true)
+ {
+ alert('Pista 2');
+ }
+ else if(num==3 && Echas[2]==true)
+ {
+ alert('Pista 3');
+ }
+ else if(num==4 && Echas[3]==true)
+ {
+alert('Pista 4');
+ }
+else if(num==5 && Echas[4]==true)
+{
+alert('Pista 5');
+}
+else
+{
+alert('Pensando');
+} 
+ }
+ //fin ayuda
+ 
+ //proceso
+ function proceso(lv)
+ {
+   var I=document.getElementById('I');
+       
+ if(lv==1)
+ {
+  I.src='a1.png';
+ }
+ else if(lv==2)
+ {
+  I.src='a2.png';
+ }
+ else if(lv==3)
+ {
+   I.src='a3.png';
+ }
+ else if(lv==4)
+ {
+  I.src='a4.png';
+ }
+else if(lv==5)
+{
+  I.src='a5.png';
+}
+
+ 
+ }
+ //fin proceso
+ 
+</script>
+</head>
+
+<body>
+<div class="muestra">
+  <div class="AF"><h2 id="ac">Aciertos: 0     </h2><h2 id="fll">Fallos: 0</h2></div>
+  <div class="pregunta" id="PP">
+  Hola, para comenzar el juego , haga click encima
+   de los botones que tiene a su izquierda.
+  solo puede resonder una vez  a cada pregunta, 
+  cuando seleccione una pregunta apareceran 3 opciones.
+  has click en la opcion que considere correcta.
+  al final aparecera el resultado del juego, en 
+  la parte superior derecha podra 
+  ver en cada momento el resultado suerte!!!
+  </div>
+
+   <div class="botones">
+  <button type="button" id="btn1"onclick="p1()"><img src="img/P1.png" id="i1"/></button>
+  <button type="button" id="btn2"onclick="p2()"><img src="img/P2.png" id="i2"/></button>
+  <button type="button" id="btn3"onclick="p3()"><img src="img/P3.png" id="i3"/></button>
+  <button type="button" id="btn4"onclick="p4()"><img src="img/P4.png" id="i4"/></button>
+  <button type="button" id="btn5"onclick="p5()"><img src="img/P5.png" id="i5"/></button>
+   </div>
+
+ <div class="RRespuestas">
+  <button type="button" id="R1" onclick="Comprobando_R(nivel,a)">Respuesta 1</button>
+  <button type="button" id="R2" onclick="Comprobando_R(nivel,b)">Respuesta 2</button>
+  <button type="button" id="R3" onclick="Comprobando_R(nivel,c)">Respuesta 3</button>
+ </div>
+<div class="ayuda"> 
+<br>
+<button type="button" id="abuena" onclick="ayuda(nivel)"><img src="img/P1.png" id="i1"/></button>
+fgghg
+
+</div> 
+<div class="imagen">lol <img src="" id="I"/></div>
+</div>
+<div id="sonido2"><audio id="sonido"  ><source src="grab_bien.wav" id="sonido12"></audio></div>
+con margin:150px; moves la muestra pa cuando la qtas cetrar
+     
+</body>
+</html>
