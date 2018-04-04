@@ -1,2 +1,2 @@
 # Juego-de-Preguntas-y-Respuestas
-Tarea utilizando adobe en la universidad
+Tareas un poco viejitas, utilizando adobe en la universidad
